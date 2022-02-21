@@ -171,31 +171,10 @@ class PiCopy(tk.Frame):
 
     def _copy_setup(self):
         self.progress_var = tk.DoubleVar()
-        progress_bar = tk.Scale(
-            self.center_frame,
-            length=400,
-            orient=tk.HORIZONTAL,
-            from_=0.0,
-            to=100.0,
-            resolution=0.1,
-            tickinterval=20.0,
-            variable=self.progress_var,
-            label='progress')
+        progress_bar = tk.Scale(self.center_frame, length=400, orient=tk.HORIZONTAL, from_=0.0, to=100.0, resolution=0.1, tickinterval=20.0, variable=self.progress_var, label='progress')
         progress_bar.grid(row=1, column=0, padx=5, pady=0, columnspan=2)
-        self.start_button = tk.Button(
-            self.frame,
-            text='begin copy',
-            command=self._begin_copy,
-            bg='light green',
-            bd=3,
-            relief=tk.RAISED)
-        self.start_button.grid(
-            row=1,
-            column=0,
-            ipadx=15,
-            ipady=15,
-            padx=10,
-            sticky=tk.SW)
+        self.start_button = tk.Button(self.frame, text='begin copy', command=self._begin_copy, bg='light green', bd=3, relief=tk.RAISED)
+        self.start_button.grid(row=1, column=0, ipadx=15, ipady=15, padx=10, sticky=tk.SW)
 
     def _begin_copy(self):
         self.start_button.grid_forget()
