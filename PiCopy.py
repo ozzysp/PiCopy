@@ -230,11 +230,7 @@ class SizeTracker(threading.Thread):
         self.check_size = True
         while self.check_size:
             dest_size = self.measure_file(self.dest_dir)
-            percent_complete = (
-                100.0 *
-                float(dest_size) /
-                float(
-                    self.source_size))
+            percent_complete = (100.0 * float(dest_size) / float(self.source_size))
             self.queue.put(percent_complete)
             if not percent_complete < 100:
                 self.check_size = False
