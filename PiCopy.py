@@ -289,7 +289,7 @@ class CopyThread():
             dir_path = os.path.dirname(os.path.realpath(file_path))
             neutral_dir = dir_path.replace(self.source_dir, '')
             file_name = ntpath.basename(file_path)
-            ct = threading.Thread(target=self.copy_thread, args=(x, self.source_dir + neutral_dir, self.dest_dir + neutral_dir, file_name,))
+            ct = threading.Thread(target=self.copy_thread, args=(x, self.source_dir + neutral_dir, self.dest_dir + neutral_dir, file_name))
             threads.append(ct)
             ct.start()
 
